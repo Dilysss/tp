@@ -16,7 +16,7 @@ public class AddStuCommand extends Command {
     public static final String MESSAGE_USAGE = COMMAND_WORD + ": Adds a student to the student list. ";
 
     public static final String MESSAGE_SUCCESS = "New student added: %1$s";
-    public static final String MESSAGE_DUPLICATE_QUESTION = "This student already exists in the address book";
+    public static final String MESSAGE_DUPLICATE_QUESTION = "This student already exists in the student list";
 
     private final Student toAdd;
 

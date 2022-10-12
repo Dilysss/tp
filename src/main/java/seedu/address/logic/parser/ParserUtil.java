@@ -15,6 +15,7 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.question.Description;
 import seedu.address.model.student.Attendance;
+import seedu.address.model.student.Response;
 import seedu.address.model.student.StuEmail;
 import seedu.address.model.student.StuName;
 import seedu.address.model.student.Telegram;
@@ -247,5 +248,20 @@ public class ParserUtil {
             throw new ParseException(Attendance.MESSAGE_CONSTRAINTS);
         }
         return new Attendance(attendance);
+    }
+
+    /**
+     * Parses a {@code String attendance} into a {@code Attendance}.
+     * Leading and trailing whitespaces will be trimmed.
+     *
+     * @throws ParseException if the given {@code attendance} is invalid.
+     */
+    public static Response parseResponse(String response) throws ParseException {
+        requireNonNull(response);
+        String trimmedResponse = response.trim();
+        if (!Response.isValidResponse(trimmedResponse)) {
+            throw new ParseException(Response.MESSAGE_CONSTRAINTS);
+        }
+        return new Response(response);
     }
 }

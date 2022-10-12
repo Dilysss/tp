@@ -22,7 +22,7 @@ public class StudentCard extends UiPart<Region> {
 
     public final Student student;
 
-    @javafx.fxml.FXML
+    @FXML
     private HBox cardPane;
     @FXML
     private Label name;
@@ -46,8 +46,8 @@ public class StudentCard extends UiPart<Region> {
         this.student = student;
         id.setText(displayedIndex + ". ");
         name.setText(student.getName().fullName);
-        email.setText(student.getEmail().value);
         telegram.setText(student.getTelegram().telegram);
+        email.setText(student.getEmail().value);
         response.setText(student.getResponse().response);
         attendance.setText(student.getAttendance().attendance);
     }
