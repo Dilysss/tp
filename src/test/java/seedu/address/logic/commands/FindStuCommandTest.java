@@ -76,7 +76,7 @@ public class FindStuCommandTest {
     }
 
     /**
-     * Parses {@code userInput} into a {@code NameContainsKeywordsPredicate}.
+     * Parses {@code userInput} into a {@code StuNameContainsKeywordsPredicate}.
      */
     private StuNameContainsKeywordsPredicate preparePredicate(String userInput) {
         return new StuNameContainsKeywordsPredicate(Arrays.asList(userInput.split("\\s+")));
