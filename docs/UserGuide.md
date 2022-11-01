@@ -113,9 +113,10 @@ Edits an existing student in the student list.
 Format: `editstu INDEX [n/NAME] [h/TELEGRAM_HANDLE] [e/EMAIL] [a/ATTENDANCE]`
 
 * Edits the student at the specified INDEX. The index represents the index number of the student in the student list.
-  The index must be a positive integer 0, 1, 2…
+  The index must be a positive integer 1, 2…
 * At least one of the fields (E.g. [n/NAME] or [e/EMAIL]) must be provided.
 * Existing fields will be updated to the input values.
+* Input attendance value without any extra '0's before and after the intended attendance value. (E.g. '0' instead of '0000' and '3' instead of '003').
 
 Examples:
 

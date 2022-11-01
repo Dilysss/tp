@@ -121,13 +121,6 @@ public class ParserUtilTest {
         assertEquals(expectedTelegram, ParserUtil.parseTelegram(VALID_TELEGRAM));
     }
 
-    /**@Test
-    public void parseTelegram_validValueWithWhitespace_returnsTrimmedTelegram() throws Exception {
-        String telegramWithWhitespace = VALID_TELEGRAM + WHITESPACE;
-        Telegram expectedTelegram = new Telegram(VALID_TELEGRAM);
-        assertEquals(expectedTelegram, ParserUtil.parseTelegram(telegramWithWhitespace));
-    }*/
-
     @Test
     public void parseAddress_null_throwsNullPointerException() {
         assertThrows(NullPointerException.class, () -> ParserUtil.parseAddress((String) null));
