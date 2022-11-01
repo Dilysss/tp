@@ -37,12 +37,6 @@
           <Button alignment="TOP_LEFT" contentDisplay="RIGHT" layoutX="1005.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleExit" style="-fx-font-size: 25; -fx-border-radius: 120; -fx-background-color: #383838#383838; -fx-background-radius: 120;" text="X" AnchorPane.rightAnchor="17.5" AnchorPane.topAnchor="10.0" />
         </AnchorPane>
         <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
-          <!--<Menu mnemonicParsing="false" text="File">
-            <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />
-          </Menu> -->
           <Menu mnemonicParsing="false" text="?">
             <items>
               <MenuItem fx:id="helpMenuItem" mnemonicParsing="false" onAction="#handleHelp" text="Help" />

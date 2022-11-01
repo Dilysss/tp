@@ -41,7 +41,8 @@ public class StudentUtil {
         descriptor.getName().ifPresent(name -> sb.append(PREFIX_NAME).append(name.fullName).append(" "));
         descriptor.getTelegram().ifPresent(telegram -> sb.append(PREFIX_TELEGRAM).append(telegram.telegram).append(" "));
         descriptor.getEmail().ifPresent(email -> sb.append(PREFIX_EMAIL).append(email.value).append(" "));
-        descriptor.getAttendance().ifPresent(attendance -> sb.append(PREFIX_ATTENDANCE).append(attendance.attendance).append(" "));
+        descriptor.getAttendance().ifPresent(attendance -> sb.append(PREFIX_ATTENDANCE).append(attendance.attendance)
+                .append(" "));
 
         return sb.toString();
     }
