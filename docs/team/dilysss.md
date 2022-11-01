@@ -43,7 +43,7 @@ Given below are my contributions to the project.
 
 
 * **Project management**:
-    * Managed releases v1.2 - v1.4 on Github
+    * Managed releases v1.2 - v1.4 on Github.
 
 
 * **Enhancements to existing features**:
