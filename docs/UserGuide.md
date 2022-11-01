@@ -7,7 +7,7 @@ User Guide
 =======
 SETA is a **desktop application for CS2103T Teaching Assistants** to track their students’ and tutorials’ details, and
 questions asked by students. SETA is optimized for use via a Command Line Interface (CLI) while still having the benefits of a
-Graphical User Interface (GUI). If you can type fast, SETA enables you to track your students. manage your tutorials and 
+Graphical User Interface (GUI). If you can type fast, SETA enables you to track your students. manage your tutorials and
 note down questions more effectively than traditional GUI apps.
 
 * Table of Contents
@@ -222,7 +222,7 @@ Format: `markq INDEX`
 * Marks the question at the specified INDEX as important.
 * The index refers to the index number shown in the displayed question list.
 * The index must be a positive integer 1, 2, 3, ...
-* The index must be within the number of questions in the  question list. E.g. There are 4 questions. The possible 
+* The index must be within the number of questions in the  question list. E.g. There are 4 questions. The possible
   indexes are 1, 2, 3 and 4.
 
 Example:
@@ -366,8 +366,8 @@ the data of your previous SETA home folder.
 | **Attendance** | `attendance`, `addresponse`                |
 | **Delete**     | `deletestu`, `deleteq`, `deletetut`        |
 | **Edit**       | `editstu`                                  |
-| **Find**       | `findstu`                                  |  
-| **List**       | `liststu`                                  |  
+| **Find**       | `findstu`                                  |
+| **List**       | `liststu`                                  |
 | **Mark**       | `markq`, `unmarkq`, `marktut`, `unmarktut` |
 | **Tag**        | `helpstu`                                  |
 | **Exit**       | `exit`                                     |

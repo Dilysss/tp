@@ -85,8 +85,8 @@ in [`Ui.java`](https://github.com/AY2223S1-CS2103T-T08-4/tp/blob/master/src/main
 
 ![Structure of the UI Component](images/UiClassDiagram.png)
 
-The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `StudentListPanel`, 
-`QuestionListPanel`, `TutorialListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`, 
+The UI consists of a `MainWindow` that is made up of parts e.g.`CommandBox`, `ResultDisplay`, `StudentListPanel`,
+`QuestionListPanel`, `TutorialListPanel`, `StatusBarFooter` etc. All these, including the `MainWindow`,
 inherit from the abstract `UiPart` class which captures the commonalities between classes that represent parts of the visible GUI.
 
 The `UI` component uses the JavaFx UI framework. The layout of these UI parts are defined in matching `.fxml` files that
@@ -150,15 +150,15 @@ API** : [`Model.java`](https://github.com/AY2223S1-CS2103T-T08-4/tp/blob/master/
 
 The `Model` component,
 
-* stores the address book data i.e., all `Student` objects (which are contained in a `UniqueStudentList` object), all 
-  `Question` objects (which are contained in a `UniqueQuestionList` object), all `Tutorial` objects (which are 
-  contained 
+* stores the address book data i.e., all `Student` objects (which are contained in a `UniqueStudentList` object), all
+  `Question` objects (which are contained in a `UniqueQuestionList` object), all `Tutorial` objects (which are
+  contained
   in a `UniqueTutorialList` object)
-* stores the currently 'selected' `Student` objects (e.g., results of a search query) as a separate _filtered_ list 
+* stores the currently 'selected' `Student` objects (e.g., results of a search query) as a separate _filtered_ list
   which
-  is exposed to outsiders as an unmodifiable `ObservableList<Student>` that can be 'observed' e.g. the UI can be 
+  is exposed to outsiders as an unmodifiable `ObservableList<Student>` that can be 'observed' e.g. the UI can be
   bound to
-  this list so that the UI automatically updates when the data in the list change. The same applies to `Question` 
+  this list so that the UI automatically updates when the data in the list change. The same applies to `Question`
   objects with `ObservableList<Question>`, and `Tutorial` objects with `ObservableList<Tutorial>`
 * stores a `UserPref` object that represents the user’s preferences. This is exposed to the outside as
   a `ReadOnlyUserPref` objects.
@@ -195,28 +195,28 @@ This section describes some noteworthy details on how certain features are imple
 
 ### Add Student feature
 
-The Add Student feature allows CS2103T TAs to add a new `Student` object to the student list. When successfully added, 
+The Add Student feature allows CS2103T TAs to add a new `Student` object to the student list. When successfully added,
 the student will be added on the Graphical User Interface.
 
 #### Implementation
 
-The Add Student mechanism is facilitated by `AddressBook`. 
+The Add Student mechanism is facilitated by `AddressBook`.
 It implements the following operations:
 * `AddressBook#hasStudent(Student s)` - Returns true if a student with the same identity as Student s exists in the address book.
 * `AddressBook#addStudent(Student student)` - Adds a student to the address book.
 
-These operations are exposed in the Model interface as `Model#hasStudent(Student student)` 
+These operations are exposed in the Model interface as `Model#hasStudent(Student student)`
 and `Model#addStudent(Student student)` respectively.
 
 Given below is an example usage scenario and how the `addstu` mechanism behaves at each step.
 
-Step 1. The user launches the application for the first time. The `AddressBook` will be initialised with the initial 
+Step 1. The user launches the application for the first time. The `AddressBook` will be initialised with the initial
 json data stored.
 
 Step 2. The user execute `addstu n/John Doe...` command to add student called John Doe to the address book.
 The `addstu` command calls `AddStuCommandParser#parse()` which parses the string keyed into the command line of the GUI.
 
-Step 3. `AddStuCommandParser#parse()` invokes the creation of an `AddStuCommand` object. 
+Step 3. `AddStuCommandParser#parse()` invokes the creation of an `AddStuCommand` object.
 
 **Note:** If a command fails its execution due to incorrect command format, it will not create a `AddStuCommand` object,
 User will retype their command.
@@ -227,7 +227,7 @@ methods are called.
 **Note:** If upon invoking `Model#hasStudent(Student s)` method and return value is `true`, it will not call `Model#addStudent(Student student)`,
 so the student will not be added into the student list as student already exist in the list.
 
-Step 5. After successfully adding student to the student list, a `CommandResult` object will be created to tell the user 
+Step 5. After successfully adding student to the student list, a `CommandResult` object will be created to tell the user
 that the student has been successfully added.
 
 The following sequence diagram shows how the add student operation works:
@@ -248,37 +248,37 @@ The following activity diagram summarizes what happens when a user executes a ne
   - Pros: Faster to add a student
   - Cons: CS2103T TA has to use another command to change the response and attendance number of the student.
 
-### Add Response feature 
+### Add Response feature
 
 The `AddResponse` feature allows users to edit the response count of a `Student` object. When successfully edited,
 the response count will be updated on the Graphical User Interface.
 
 #### Implementation
 
-The  response mechanism is facilitated by `UniqueStudentList`. It is stored internally as a `Response` along with other 
-attributes of a `Student`. It is first initialized upon creation of a `Student` object and set as a `null`. 
+The  response mechanism is facilitated by `UniqueStudentList`. It is stored internally as a `Response` along with other
+attributes of a `Student`. It is first initialized upon creation of a `Student` object and set as a `null`.
 
 Given below is an example usage scenario and how the response mechanism behaves at each step.
 
-Step 1. The user launches the application for the first time. The `UniqueStudentList` will be initialized with the 
+Step 1. The user launches the application for the first time. The `UniqueStudentList` will be initialized with the
 initial json data stored.
 
-Step 2. The user executes `addresponse 1 m/7` command to add a response count to the first student in the 
+Step 2. The user executes `addresponse 1 m/7` command to add a response count to the first student in the
 one-indexed `UniqueStudentList`. The `addresponse` command will call `AddResponseCommandParser#parse()`.
 
-**Note:**  
+**Note:**
 1. If the index given is not a valid index (ie, out of bounds or negative), it will return an error to the user rather
 than attempting to execute the command.
 2. If the review is missing an `index`, or a category (`m/`), `AddResponseCommandParser` will throw an `ParseException`
-to the user with an error message specifying that the command parameters are incorrect, and an example usage of the 
+to the user with an error message specifying that the command parameters are incorrect, and an example usage of the
 command.
 
 Step 3. `AddResponseCommandParser` returns an `AddResponseCommand` with the newly created `Response` as a parameter.
 
-Step 4. `AddResponseCommand` calls `Model#setStudent` and `Model#updateFilteredStudentList` to edit the response 
+Step 4. `AddResponseCommand` calls `Model#setStudent` and `Model#updateFilteredStudentList` to edit the response
 attribute of the `Student`.
 
-Step 5. After successfully editing the response attribute, `AddResponseCommand` will return the `CommandResult` to the 
+Step 5. After successfully editing the response attribute, `AddResponseCommand` will return the `CommandResult` to the
 `Ui`.
 
 The following sequence diagram shows how the add response feature is executed:
@@ -287,16 +287,16 @@ The following sequence diagram shows how the add response feature is executed:
 The following activity diagram summarizes what happens when a user executes a new command:
 ![AddResponseActivityDiagram](images/AddResponseActivityDiagram.png)
 
-#### Design Considerations 
+#### Design Considerations
 
-**Aspect: How AddResponse executes:**  
+**Aspect: How AddResponse executes:**
 
-- **Alternative 1**: Only the number of responses on zoom recorded 
+- **Alternative 1**: Only the number of responses on zoom recorded
   - Pros: Easy to implement
   - Cons: No check on quality of messages sent, which might be factored in to give participation marks for CS2103T
 - **Alternative 2**: Number of responses and content of responses on zoom recorded
   - Pros: More comprehensive, users can check the quality of responses to award participation marks correspondingly
-  - Cons: More memory consumed, takes quite long to implement on top of other features to be implemented in 4 weeks 
+  - Cons: More memory consumed, takes quite long to implement on top of other features to be implemented in 4 weeks
 before feature freeze.
 
 ### Add Question feature
@@ -305,8 +305,8 @@ before feature freeze.
 
 The proposed add question mechanism is facilitated by `AddressBook`.
 It implements the following operations:
-* `AddressBook#hasQuestion(Question question)` - Returns true if a question with the same identity as Question question 
-  exists in the 
+* `AddressBook#hasQuestion(Question question)` - Returns true if a question with the same identity as Question question
+  exists in the
   address book.
 * `AddressBook#addQuestion(Question question)` - Adds a question to the question list in the address book.
 
@@ -319,18 +319,18 @@ Step 1. The user launches the application for the first time. The `AddressBook` 
 address book state.
 
 Step 2. The user execute `addq Why?` command to add question called "Why?" to the question list ('UniqueQuestionList').
-The `addq` command calls `Model#setAddressBook(ReadOnlyAddressBook addressBook)`, causing the modified address book 
-after the `addq Why?` command executes to be saved in the `addressBook`.  
+The `addq` command calls `Model#setAddressBook(ReadOnlyAddressBook addressBook)`, causing the modified address book
+after the `addq Why?` command executes to be saved in the `addressBook`.
 
-**Note:** 
-1. If a command fails its execution 
-due to incorrect command format, it will not call `Model#setAddressBook(ReadOnlyAddressBook addressBook)`, 
+**Note:**
+1. If a command fails its execution
+due to incorrect command format, it will not call `Model#setAddressBook(ReadOnlyAddressBook addressBook)`,
 so the address book state will not be saved into `addressBook`. User will retype their command.
-2. If upon invoking `AddressBook#hasQuestion` 
-method and return value is `true`, it will not call `Model#setAddressBook(ReadOnlyAddressBook addressBook)`, 
+2. If upon invoking `AddressBook#hasQuestion`
+method and return value is `true`, it will not call `Model#setAddressBook(ReadOnlyAddressBook addressBook)`,
 so 'UniqueQuestionList' and `addressBook` will not be updated.
-3. Questions added not case-sensitive. For 
-example, if a question in the `question list` is "why?", another question called "WHY?" can be added. Duplicates are 
+3. Questions added not case-sensitive. For
+example, if a question in the `question list` is "why?", another question called "WHY?" can be added. Duplicates are
 not allowed. E.g. adding another question called "why?".
 
 
@@ -470,7 +470,7 @@ otherwise)
 **MSS**
 
 1. User requests to add a student.
-2. SETA adds the student with his or her details into the student list.  
+2. SETA adds the student with his or her details into the student list.
    Use case ends.
 
 **Extensions**
@@ -552,7 +552,7 @@ otherwise)
     * 3b1. SETA shows an error message.
 
       Use case resumes at step 2.
-    
+
 
 ****
 
@@ -577,7 +577,7 @@ otherwise)
     * 3a1. SETA shows an error message.
 
       Use case resumes at step 2.
-    
+
 ****
 
 **Use case: Add help tag**
@@ -712,7 +712,7 @@ otherwise)
 **MSS**
 
 1. User requests to add a tutorial.
-2. SETA adds the tutorial with the tutorial details into the tutorial list.   
+2. SETA adds the tutorial with the tutorial details into the tutorial list.
 Use case ends.
 
 **Extensions**
@@ -826,7 +826,7 @@ testers are expected to do more *exploratory* testing.
 
     1. Download the jar file and copy into an empty folder
 
-    2. Double-click the jar file Expected: Shows the GUI. The window size will take up the 
+    2. Double-click the jar file Expected: Shows the GUI. The window size will take up the
        full screen.
 
 2. Saving window preferences
@@ -853,7 +853,7 @@ testers are expected to do more *exploratory* testing.
     4. Other incorrect deletestu commands to try: `deletestu`, `deletestu x` (where x is larger than the list size) <br>
        Expected: Similar to previous.
 
-### Add response count to a student 
+### Add response count to a student
 
 1. Add a response count to a student while all students are being shown
 
@@ -882,19 +882,19 @@ testers are expected to do more *exploratory* testing.
 
     4. Other incorrect marktut commands to try: `helpstu`, `helpstu x` (where x is larger than list size), `helpstu -1` <br>
        Expected: Similar to previous
-    
+
 ### Marking a tutorial as complete
 
 1. Marking a tutorial as complete while all tutorials are being shown
 
    1. Prerequisites: At least one tutorial in the tutorial list.
-   
+
    2. Test case: `marktut 1`<br>
       Expected: First tutorial is deleted from the list. Details of deleted tutorial shown in the status message.
-   
+
    3. Test case: `marktut 0`<br>
       Expected: No tutorial marked. Error details shown in status message. Status bar remains the same.
-   
+
    4. Other incorrect marktut commands to try: `marktut`, `marktut x` (where x is larger than list size), `marktut -1` <br>
-      Expected: Similar to previous 
+      Expected: Similar to previous
 

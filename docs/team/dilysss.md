@@ -19,7 +19,6 @@ Given below are my contributions to the project.
     * What it does: Allows the user to edit the student's name, email or telegram handle.
     * Justification: This feature improves the product significantly because a user can make any changes to a student's details if he or she keyed in the wrong details at the start or if the student makes any changes during the semester.
     * Highlights: This enhancement requires me to make changes to existing classes.
-    * Credits:
 
 * **New Feature**: Added the ability to list all students.
     * What it does: Allows the user to view the details of all his or her students at once.
