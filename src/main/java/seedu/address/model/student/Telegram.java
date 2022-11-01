@@ -9,8 +9,8 @@ import static seedu.address.commons.util.AppUtil.checkArgument;
 public class Telegram {
 
     public static final String MESSAGE_CONSTRAINTS =
-            "Telegram handle should start with '@', first character of a telegram handle " +
-                    "should be an alphanumeric character, \n"
+            "Telegram handle should start with '@', first character of a telegram handle "
+                    + "should be an alphanumeric character, \n"
                     + "following characters can be alphanumeric characters or underscore. \n"
                     + "Telegram handle should not be blank or have spaces. \n"
                     + "Minimum length of telegram handle is 5 characters.";
