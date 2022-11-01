@@ -14,10 +14,12 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.logic.commands.AddCommand;
+import seedu.address.logic.commands.AddStuCommand;
 import seedu.address.logic.commands.ClearCommand;
 import seedu.address.logic.commands.DeleteCommand;
 import seedu.address.logic.commands.EditCommand;
 import seedu.address.logic.commands.EditCommand.EditPersonDescriptor;
+import seedu.address.logic.commands.EditStuCommand;
 import seedu.address.logic.commands.ExitCommand;
 import seedu.address.logic.commands.FindStuCommand;
 import seedu.address.logic.commands.HelpCommand;
@@ -25,9 +27,13 @@ import seedu.address.logic.commands.ListStuCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Person;
 import seedu.address.model.student.StuNameContainsKeywordsPredicate;
+import seedu.address.model.student.Student;
 import seedu.address.testutil.EditPersonDescriptorBuilder;
+import seedu.address.testutil.EditStudentDescriptorBuilder;
 import seedu.address.testutil.PersonBuilder;
 import seedu.address.testutil.PersonUtil;
+import seedu.address.testutil.StudentBuilder;
+import seedu.address.testutil.StudentUtil;
 
 public class AddressBookParserTest {
 
@@ -39,6 +45,13 @@ public class AddressBookParserTest {
         AddCommand command = (AddCommand) parser.parseCommand(PersonUtil.getAddCommand(person));
         assertEquals(new AddCommand(person), command);
     }
+
+    /**@Test
+    public void parseCommand_addstu() throws Exception {
+        Student student = new StudentBuilder().build();
+        AddStuCommand command = (AddStuCommand) parser.parseCommand(StudentUtil.getAddStuCommand(student));
+        assertEquals(new AddStuCommand(student), command);
+    }*/
 
     @Test
     public void parseCommand_clear() throws Exception {
@@ -63,13 +76,22 @@ public class AddressBookParserTest {
     }
 
     @Test
+    public void parseCommand_editstu() throws Exception {
+        Student student = new StudentBuilder().build();
+        EditStuCommand.EditStudentDescriptor descriptor = new EditStudentDescriptorBuilder(student).build();
+        EditStuCommand command = (EditStuCommand) parser.parseCommand(EditStuCommand.COMMAND_WORD + " "
+                + INDEX_FIRST_PERSON.getOneBased() + " " + StudentUtil.getEditStudentDescriptorDetails(descriptor));
+        assertEquals(new EditStuCommand(INDEX_FIRST_PERSON, descriptor), command);
+    }
+
+    @Test
     public void parseCommand_exit() throws Exception {
         assertTrue(parser.parseCommand(ExitCommand.COMMAND_WORD) instanceof ExitCommand);
         assertTrue(parser.parseCommand(ExitCommand.COMMAND_WORD + " 3") instanceof ExitCommand);
     }
 
     @Test
-    public void parseCommand_find() throws Exception {
+    public void parseCommand_findstu() throws Exception {
         List<String> keywords = Arrays.asList("foo", "bar", "baz");
         FindStuCommand command = (FindStuCommand) parser.parseCommand(
                 FindStuCommand.COMMAND_WORD + " " + keywords.stream().collect(Collectors.joining(" ")));
@@ -83,7 +105,7 @@ public class AddressBookParserTest {
     }
 
     @Test
-    public void parseCommand_list() throws Exception {
+    public void parseCommand_liststu() throws Exception {
         assertTrue(parser.parseCommand(ListStuCommand.COMMAND_WORD) instanceof ListStuCommand);
         assertTrue(parser.parseCommand(ListStuCommand.COMMAND_WORD + " 3") instanceof ListStuCommand);
     }
