@@ -66,10 +66,11 @@ public class Student {
     /**
      * Returns a StuName object with its fullname attribute converted to all lowercase and with spaces removed.
      */
-    public StuName nameToLowercaseRemoveSpaces(String name) {
-        name = name.replaceAll("\\s", "");
-        name = name.toLowerCase();
-        return new StuName(name);
+    public StuName nameToLowercaseRemoveSpaces(StuName name) {
+        String editedName = name.toString();
+        editedName = editedName.replaceAll("\\s", "");
+        editedName = editedName.toLowerCase();
+        return new StuName(editedName);
     }
 
     /**
@@ -82,8 +83,8 @@ public class Student {
         }
 
         return otherStudent != null
-                && nameToLowercaseRemoveSpaces(otherStudent.getName().fullName)
-                .equals(nameToLowercaseRemoveSpaces(getName().fullName));
+                && nameToLowercaseRemoveSpaces(otherStudent.name)
+                .equals(nameToLowercaseRemoveSpaces(this.name));
     }
 
     /**

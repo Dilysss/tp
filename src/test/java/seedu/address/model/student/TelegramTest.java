@@ -28,6 +28,7 @@ public class TelegramTest {
         assertFalse(Telegram.isValidTelegram("")); // empty string
         assertFalse(Telegram.isValidTelegram(" ")); // spaces only
         assertFalse(Telegram.isValidTelegram("^")); // only non-alphanumeric characters
+        assertFalse(Telegram.isValidTelegram("_'")); //only underscore
         assertFalse(Telegram.isValidTelegram("peter*")); // contains non-alphanumeric characters
         assertFalse(Telegram.isValidTelegram("peter")); // no @ before alphanumeric characters
         assertFalse(Telegram.isValidTelegram("@peter park")); // spaces in between telegram handle

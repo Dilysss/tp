@@ -99,6 +99,7 @@ Format: `addstu n/NAME h/TELEGRAM_HANDLE e/EMAIL`
 * Telegram handle must start with a '@', followed by an alphanumeric character.
 * After the first character, telegram handle can only contain alphanumeric character or underscore.
 * Email can only contain alphanumeric characters.
+* Email domain name must include at least 1 period. (E.g. `test@yahoo` will not be accepted, but `test@yahoo.com` will)
 
 Examples:
 
