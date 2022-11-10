@@ -126,7 +126,7 @@ the number of items in its respective list e.g. for `markq`, `INDEX` must be les
 
 </div>
 
-### <u>Students</u>
+### <ins>Students</ins>
 
 The features under the student category allow you to keep track of and manage the students under you.
 You can see your student's details, such as their names, telegram handles, and email. The latter two aid you in
@@ -331,7 +331,7 @@ Example:
 
 * `liststu`
 
-### <u>Questions</u>
+### <ins>Questions</ins>
 
 The features under the question category allows you to keep track of questions asked by students. These questions are
 added when you do not have enough time to answer them. Furthermore, if you find a question that
@@ -393,7 +393,7 @@ Example:
 
 * `deleteq 1` deletes the first question from the question list
 
-### <u>Tutorials</u>
+### <ins>Tutorials</ins>
 
 The features under the tutorial category allow you to keep track of and manage your tutorials and consultations.
 You can see the group number, content, date and time for your tutorials. These correspond to the `GROUP_NUMBER`,
