@@ -7,8 +7,8 @@ title: User Guide
 
 SETA is a **desktop application for CS2103T Teaching Assistants** to track students’ and tutorials’ details, and
 questions asked by students. SETA is optimized for use via a [Command Line Interface (CLI)](#command-line-interface-cli) while still having the
-benefits of a [Graphical User Interface (GUI)](#graphical-user-interface-gui). If you can type fast, SETA enables you to track your 
-students, 
+benefits of a [Graphical User Interface (GUI)](#graphical-user-interface-gui). If you can type fast, SETA enables you to track your
+students,
 manage your
 tutorials and note down questions more effectively than traditional GUI apps.
 
@@ -126,7 +126,7 @@ the number of items in its respective list e.g. for `markq`, `INDEX` must be les
 
 </div>
 
-### Students
+### <u>Students</u>
 
 The features under the student category allow you to keep track of and manage the students under you.
 You can see your student's details, such as their names, telegram handles, and email. The latter two aid you in
@@ -136,7 +136,7 @@ he or she has sent on Zoom) to record their participation.
 
 ### Adding a student : `addstu`
 
-The `addstu` feature allows you to add a student to SETA. To add a student, you must include their name, telegram handle
+This feature allows you to add a student to SETA. To add a student, you must include their name, telegram handle
 and email.
 
 **Format**: `addstu n/NAME h/TELEGRAM_HANDLE e/EMAIL`
@@ -166,7 +166,7 @@ and email.
 
 ### Editing a student: `editstu`
 
-The `editstu` feature allows you to edit an existing student in the student list. Editing a student enables you to amend any mistake
+This feature allows you to edit an existing student in the student list. Editing a student enables you to amend any mistake
 or changes made to the student's details.
 
 **Format**: `editstu INDEX [n/NAME] [h/TELEGRAM_HANDLE] [e/EMAIL] [a/ATTENDANCE]`
@@ -209,7 +209,7 @@ or changes made to the student's details.
 
 ### Adding student's attendance : `attendance`
 
-This feature allows you to take attendance of your students after each tutorial. It helps you to increment a student's attendance by 1. 
+This feature allows you to take attendance of your students after each tutorial. It helps you to increment a student's attendance by 1.
 At the end of the semester, you can have an overview of all the students' attendance for grading
 purposes (participation marks).
 
@@ -228,7 +228,7 @@ Example:
 
 ### Adding student's response: `addresponse`
 
-The `addresponse` feature allows you to edit your students' response count. This helps you to track your 
+The `addresponse` feature allows you to edit your students' response count. This helps you to track your
 student's participation in the tutorial through the recording number of messages sent by him/her.
 
 Format: `addresponse INDEX m/MESSAGE_COUNT`
@@ -258,7 +258,7 @@ Example:
     * After
       <br><br>
       <img src="images/ug-screenshots/addresponse.png" alt="addresponse 1 m/7" width="1100">
-    
+
 ### Adding help tag: `helpstu`
 
 This feature allows you to add a help tag to an existing student. When you notice that a specific student has not been attending tutorials or
@@ -322,7 +322,7 @@ Examples:
 
 ### Listing all students: `liststu`
 
-This feature allows you to list all students you have. 
+This feature allows you to list all students you have.
 This feature is useful after using the `findstu` feature to view all the students that you have.
 
 Format: `liststu`
@@ -331,7 +331,7 @@ Example:
 
 * `liststu`
 
-### Questions
+### <u>Questions</u>
 
 The features under the question category allows you to keep track of questions asked by students. These questions are
 added when you do not have enough time to answer them. Furthermore, if you find a question that
@@ -393,7 +393,7 @@ Example:
 
 * `deleteq 1` deletes the first question from the question list
 
-### Tutorials
+### <u>Tutorials</u>
 
 The features under the tutorial category allow you to keep track of and manage your tutorials and consultations.
 You can see the group number, content, date and time for your tutorials. These correspond to the `GROUP_NUMBER`,
@@ -449,7 +449,7 @@ Example:
 
 ### Unmarking a tutorial: `unmarktut`
 
-The `unmarktut` feature allows you to unmark the tutorial as complete. If a tutorial was mistakenly marked as done, 
+The `unmarktut` feature allows you to unmark the tutorial as complete. If a tutorial was mistakenly marked as done,
 you can undo it using this feature.
 
 Format: `unmarktut INDEX`
@@ -465,8 +465,8 @@ Example:
 
 ### Clearing data in SETA : `clear`
 
-Clears the data in SETA. Use this to clear the sample data given at the beginning or when you
-want to start adding students, questions and tutorials from scratch again.
+This feature allows you to clear all the data in SETA. You can use this feature to clear the sample data given at the beginning or when you
+want to delete all the data you have at once.
 
 Format: `clear `
 
@@ -478,7 +478,7 @@ Format: `exit`
 
 ### Saving the data
 
-SETA data are saved in the [hard disk](#hard-disk) automatically after any command that changes the data. There is no 
+SETA data are saved in the [hard disk](#hard-disk) automatically after any command that changes the data. There is no
 need to save
 manually.
 
@@ -507,29 +507,29 @@ You can find answers to frequently asked questions here.
 the data of your previous SETA home folder.
 
    <br><br>
-   
+
    <strong>Q: I cannot see the sample data, what do I do?</strong><br>
    <strong>A</strong>: Delete all the files under `[JAR file location]/data` and restart the jar application. You should be able to 
 see the sample data now.
 
    <br><br>
-   
+
    <strong>Q: What does the cross button at the top right hand of the application do?</strong><br>
    <strong>A</strong>: You can simply click on that button to exit the application!
-   
+
    <br><br>
-   
+
    <strong>Q: What does the cross button at the top right hand of the application do?</strong><br>
    <strong>A</strong>: You can simply click on that button to exit the application!
-   
+
    <br><br>
-   
+
    <strong>Q: What is the difference between using the `exit` command and the cross button at the top right hand of the
 application?</strong><br>
    <strong>A</strong>: Both does the same job! The cross button is for your convenience if you feel typing `exit` is too troublesome!
 
    <br><br>
-   
+
    <strong>Q: What does the question mark at the top left hand of the application do?</strong><br>
    <strong>A</strong>: You can simply click on that button to view the link to our User Guide if you face any issues when using our
 application!
@@ -606,18 +606,16 @@ tutorials.
 
 ### Graphical User Interface (GUI)
 
-GUI is a kind of display that allows you to perform an action within the application through the graphics in the app. 
+GUI is a kind of display that allows you to perform an action within the application through the graphics in the app.
 For example, clicking on the top right cross icon in SETA allows you to exit SETA.
 
 ![ExitButton](images/ug-screenshots/exitbutton.png)
 
 ### JSON file
 
-A [JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) file is a file with an open standard file format and a data interchange format. 
+A [JSON](https://en.wikipedia.org/wiki/JSON) (JavaScript Object Notation) file is a file with an open standard file format and a data interchange format.
 Its purpose is to use human-readable text to store and transmit data objects.
 
 ### Hard Disk
 
-A [hard disk](https://en.wikipedia.org/wiki/Hard_disk_drive) (or hard disk drive) is a data storage device that stores and retrieves digital data. 
-
-<a href="#top">Go to top</a>
+A [hard disk](https://en.wikipedia.org/wiki/Hard_disk_drive) (or hard disk drive) is a data storage device that stores and retrieves digital data.

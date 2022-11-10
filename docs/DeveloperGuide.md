@@ -1,17 +1,17 @@
 ---
-layout: page 
+layout: page
 title: Developer Guide
 ---
 
 This developer guide is targeted at developers who see the value in this application and would like to further 
-improve on its design or implementation. This guide is also targeted at future maintainers of this application and 
+improve on its design or implementation. This guide is also targeted at future maintainers of this application and
 students who wish to use this application and understand how it works.
 
 
-* Table of Contents 
+* Table of Contents
   * **[Acknowledgements](#acknowledgements)**
   * **[Setting up, getting started](#setting-up-getting-started)**
-  * **[Design](#design)** 
+  * **[Design](#design)**
   * **[Implementation](#implementation)**
   * **[Appendix: Requirements](#appendix-requirements)**
   * **[Appendix: Instructions for manual testing](#appendix-instructions-for-manual-testing)**
@@ -1135,4 +1135,4 @@ exploratory* testing.
        Expected: No tutorial unmarked. Error details shown in status message. Status bar remains the same.
     4. Other incorrect unmarktut commands to try: `unmarktut`, `unmarktut x` (where x is larger than list size)
        , `unmarktut -1` <br>
-       Expected: Similar to previous 
+       Expected: Similar to previous
